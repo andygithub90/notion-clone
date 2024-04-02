@@ -191,3 +191,7 @@ https://www.blocknotejs.org/
 ### Import as dynamic
 
 https://www.blocknotejs.org/docs/advanced/nextjs#import-as-dynamic
+
+## Deploying to Vercel
+
+https://docs.convex.dev/production/hosting/vercel
