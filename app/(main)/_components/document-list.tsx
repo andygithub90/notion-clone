@@ -83,7 +83,7 @@ export const DocumentList = ({
 
         實作出來就會是先 call DocumentList function component ，傳入的 parentDocumentId 是 undefined ，因為我們要拿到所有最上層的節點，拿到之後再用 map 遍歷所有最上層的節點，再用 recursive 的方式在 DocumentList function component 裡面 call DocumentList function component ，傳入的 parentDocumentId 是最上層節點的 id ， query documents table 找到 parentDocument 是這個 id 的所有記錄，這就會是這個 id 的下一層節點，也就是第二層節點，因為下一層節點的 parentDocument 欄位會記錄父層節點的 id ，再用 map 遍歷這層節點，把這層節點的 id 拿去query documents table 找到 parentDocument 是這個 id 的所有記錄，也就是 map 遍歷這層節點的下層節點，通過這種方式不斷去找找下一層節點直到沒有資料就表示已經找到最下層了，也就遍歷完所有文件了。
 
-        但是這邊有做一些優化，沒有直接遍歷完所有好貸節點，只遍歷被展開的下一層子節點，因為我們只需要知道被展開的文件下有什麼子節點，不需要知道他的所有後代節點
+        但是這邊有做一些優化，沒有直接遍歷完所有後代節點，只遍歷被展開的下一層子節點，因為我們只需要知道被展開的文件下有什麼子節點，不需要知道他的所有後代節點
       */}
       {documents.map((document) => (
         <div key={document._id}>
